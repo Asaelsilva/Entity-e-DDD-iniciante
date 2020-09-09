@@ -1,5 +1,5 @@
 {
   "ConnectionStrings": {
-    "SwitchDB": "Data Source= DESKTOP-O34D68D\\SQLEXPRESS; Integrated Security=true; Initial Catalog=SwitchDB;"
+    "SwitchDB": "Data Source= DESKTOP-IA366NL\\SQLEXPRESS; Integrated Security=true; Initial Catalog=SwitchDB;"
   }
 }

@@ -16,7 +16,12 @@ namespace Switch.Infra.Data.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new UsuarioConfiguration());
+            // modelBuilder.ApplyConfiguration(new UsuarioConfiguration());
+            modelBuilder.Entity<Usuario>(entity => {
+                entity.HasKey(u => u.Id);
+                entity.Property(u => u.Nome).IsRequired().HasMaxLength(50);
+            
+            });
             base.OnModelCreating(modelBuilder);
         }
     }
