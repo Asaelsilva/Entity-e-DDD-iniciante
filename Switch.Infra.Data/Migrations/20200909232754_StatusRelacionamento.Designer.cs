@@ -10,8 +10,8 @@ using Switch.Infra.Data.Context;
 namespace Switch.Infra.Data.Migrations
 {
     [DbContext(typeof(SwitchContext))]
-    [Migration("20191124184306_AdicionandoUsuarioConfiguration")]
-    partial class AdicionandoUsuarioConfiguration
+    [Migration("20200909232754_StatusRelacionamento")]
+    partial class StatusRelacionamento
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,34 @@ namespace Switch.Infra.Data.Migrations
                 .HasAnnotation("ProductVersion", "2.1.8-servicing-32085")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("Switch.Domain.Entities.Postagem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("DataPublicacao");
+
+                    b.Property<string>("Texto");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Postagens");
+                });
+
+            modelBuilder.Entity("Switch.Domain.Entities.StatusRelacionamento", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Descricao");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("statusRelacionamento");
+                });
 
             modelBuilder.Entity("Switch.Domain.Entities.Usuario", b =>
                 {

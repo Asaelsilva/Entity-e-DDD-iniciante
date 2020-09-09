@@ -7,8 +7,10 @@ namespace Switch.Infra.Data.Context
     public class SwitchContext : DbContext
     {
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Postagem> Postagens { get; set; }
+        public DbSet<StatusRelacionamento> statusRelacionamento { get; set; }
 
-        public SwitchContext(DbContextOptions <SwitchContext> options) : base (options)
+        public SwitchContext(DbContextOptions <SwitchContext>  options) : base (options)
         {
                 
         }
@@ -16,12 +18,7 @@ namespace Switch.Infra.Data.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // modelBuilder.ApplyConfiguration(new UsuarioConfiguration());
-            modelBuilder.Entity<Usuario>(entity => {
-                entity.HasKey(u => u.Id);
-                entity.Property(u => u.Nome).IsRequired().HasMaxLength(50);
-            
-            });
+            modelBuilder.ApplyConfiguration(new UsuarioConfiguration());            
             base.OnModelCreating(modelBuilder);
         }
     }

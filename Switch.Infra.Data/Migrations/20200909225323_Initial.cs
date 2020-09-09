@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Switch.Infra.Data.Migrations
 {
-    public partial class initial : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,14 +13,14 @@ namespace Switch.Infra.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(nullable: true),
-                    SobreNome = table.Column<string>(nullable: true),
-                    Email = table.Column<string>(nullable: true),
-                    Senha = table.Column<string>(nullable: true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Nome = table.Column<string>(maxLength: 400, nullable: false),
+                    SobreNome = table.Column<string>(maxLength: 400, nullable: false),
+                    Email = table.Column<string>(maxLength: 400, nullable: false),
+                    Senha = table.Column<string>(maxLength: 400, nullable: false),
                     DataNascimento = table.Column<DateTime>(nullable: false),
                     Sexo = table.Column<int>(nullable: false),
-                    UrlFoto = table.Column<string>(nullable: true)
+                    UrlFoto = table.Column<string>(maxLength: 400, nullable: false)
                 },
                 constraints: table =>
                 {
