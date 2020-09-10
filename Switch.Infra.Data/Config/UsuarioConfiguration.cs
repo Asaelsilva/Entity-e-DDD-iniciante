@@ -5,7 +5,7 @@ using Switch.Domain.Entities;
 namespace Switch.Infra.Data.Config
 {
     public class UsuarioConfiguration : IEntityTypeConfiguration<Usuario>
-    {
+    { 
         public void Configure(EntityTypeBuilder<Usuario> builder)
         {
             builder.HasKey(u => u.Id);

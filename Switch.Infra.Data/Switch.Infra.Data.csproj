@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200910002022_NovosCamposEmUsuario.cs" />
+    <Compile Remove="Migrations\20200910002022_NovosCamposEmUsuario.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.1.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="2.1.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="2.1.8" />
